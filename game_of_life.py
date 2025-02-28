@@ -6,13 +6,13 @@ def main():
     print_grid(main_grid)
     input("")
     while True:
-        time.sleep(0.6)
         print("\033c", end='')
+        time.sleep(0.6)
         main_grid = iterate(main_grid)
         print_grid(main_grid)
 
 def generate_main_grid(x: int, y: int):
-    #return [[1 for j in range(x)] for i in range(y)]
+    #return [[0 for j in range(x)] for i in range(y)]
     return [[0, 0, 0, 0, 0,  0, 0, 0, 0, 0,  0, 0, 0, 0, 0,  0, 0], # 1
             [0, 0, 0, 0, 0,  0, 0, 0, 0, 0,  0, 0, 0, 0, 0,  0, 0], # 2
             [0, 0, 0, 0, 1,  1, 1, 0, 0, 0,  1, 1, 1, 0, 0,  0, 0], # 3
@@ -82,4 +82,5 @@ def iterate(grid):
                 new_grid[j][i] = 1 # birth
     return new_grid
 
-main()
+if __name__ == "__main__":
+    main()
